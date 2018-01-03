@@ -16,8 +16,6 @@
 
 PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/bin/adsprpcd:system/bin/adsprpcd \
-    vendor/motorola/msm8916-common/proprietary/bin/btnvtool:system/bin/btnvtool \
-    vendor/motorola/msm8916-common/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
     vendor/motorola/msm8916-common/proprietary/bin/imscmservice:system/bin/imscmservice \
     vendor/motorola/msm8916-common/proprietary/bin/imsdatadaemon:system/bin/imsdatadaemon \
     vendor/motorola/msm8916-common/proprietary/bin/imsqmidaemon:system/bin/imsqmidaemon \
@@ -70,6 +68,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/lib/libmot_sensorlistener.so:system/lib/libmot_sensorlistener.so \
     vendor/motorola/msm8916-common/proprietary/lib/libOmxVdecHevc.so:system/lib/libOmxVdecHevc.so \
     vendor/motorola/msm8916-common/proprietary/lib/libqmimotext.so:system/lib/libqmimotext.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so:system/vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/eglsubAndroid.so:system/vendor/lib/egl/eglsubAndroid.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/eglSubDriverAndroid.so:system/vendor/lib/egl/eglSubDriverAndroid.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libEGL_adreno.so:system/vendor/lib/egl/libEGL_adreno.so \
@@ -83,6 +82,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libRBEGL_adreno.so:system/vendor/lib/egl/libRBEGL_adreno.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libRBGLESv1_CM_adreno.so:system/vendor/lib/egl/libRBGLESv1_CM_adreno.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libRBGLESv2_adreno.so:system/vendor/lib/egl/libRBGLESv2_adreno.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so:system/vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/hw/flp.default.so:system/vendor/lib/hw/flp.default.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so:system/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/vendor.qti.imsrtpservice@1.0.so:system/vendor/lib/vendor.qti.imsrtpservice@1.0.so \
