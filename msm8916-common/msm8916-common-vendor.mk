@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/bin/imscmservice:system/bin/imscmservice \
     vendor/motorola/msm8916-common/proprietary/bin/imsdatadaemon:system/bin/imsdatadaemon \
     vendor/motorola/msm8916-common/proprietary/bin/imsqmidaemon:system/bin/imsqmidaemon \
+    vendor/motorola/msm8916-common/proprietary/bin/imsrcsd:system/vendor/bin/imsrcsd \
     vendor/motorola/msm8916-common/proprietary/bin/ims_rtp_daemon:system/bin/ims_rtp_daemon \
     vendor/motorola/msm8916-common/proprietary/bin/irsc_util:system/bin/irsc_util \
     vendor/motorola/msm8916-common/proprietary/bin/netmgrd:system/bin/netmgrd \
@@ -56,10 +57,9 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/etc/flp.conf:system/etc/flp.conf \
     vendor/motorola/msm8916-common/proprietary/etc/gps.conf:system/etc/gps.conf \
     vendor/motorola/msm8916-common/proprietary/etc/permissions/imscm.xml:system/etc/permissions/imscm.xml \
-    vendor/motorola/msm8916-common/proprietary/etc/permissions/ims.xml:system/etc/permissions/ims.xml \
+    vendor/motorola/msm8916-common/proprietary/etc/permissions/qti-vzw-ims-internal.xml:system/etc/permissions/qti-vzw-ims-internal.xml \
     vendor/motorola/msm8916-common/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
     vendor/motorola/msm8916-common/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
-    vendor/motorola/msm8916-common/proprietary/etc/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
     vendor/motorola/msm8916-common/proprietary/etc/sap.conf:system/etc/sap.conf \
     vendor/motorola/msm8916-common/proprietary/lib/hw/sensorhub.msm8916.so:system/lib/hw/sensorhub.msm8916.so \
     vendor/motorola/msm8916-common/proprietary/lib/libadropbox.so:system/lib/libadropbox.so \
@@ -84,6 +84,8 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libRBGLESv1_CM_adreno.so:system/vendor/lib/egl/libRBGLESv1_CM_adreno.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/egl/libRBGLESv2_adreno.so:system/vendor/lib/egl/libRBGLESv2_adreno.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/hw/flp.default.so:system/vendor/lib/hw/flp.default.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so:system/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/vendor.qti.imsrtpservice@1.0.so:system/vendor/lib/vendor.qti.imsrtpservice@1.0.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libacdb-fts.so:system/vendor/lib/libacdb-fts.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libacdbloader.so:system/vendor/lib/libacdbloader.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libacdbrtac.so:system/vendor/lib/libacdbrtac.so \
@@ -113,6 +115,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libgsl.so:system/vendor/lib/libgsl.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libI420colorconvert.so:system/vendor/lib/libI420colorconvert.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libidl.so:system/vendor/lib/libidl.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imscamera.so:system/vendor/lib/lib-imscamera.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libimscamera_jni.so:system/vendor/lib/libimscamera_jni.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsdpl.so:system/vendor/lib/lib-imsdpl.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libimsmedia_jni.so:system/vendor/lib/libimsmedia_jni.so \
@@ -124,7 +127,10 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsrcs.so:system/vendor/lib/lib-imsrcs.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsSDP.so:system/vendor/lib/lib-imsSDP.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imss.so:system/vendor/lib/lib-imss.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsvideocodec.so:system/vendor/lib/lib-imsvideocodec.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsvt.so:system/vendor/lib/lib-imsvt.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsvtextutils.so:system/vendor/lib/lib-imsvtextutils.so \
+    vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsvtutils.so:system/vendor/lib/lib-imsvtutils.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/lib-imsxml.so:system/vendor/lib/lib-imsxml.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/libizat_core.so:system/vendor/lib/libizat_core.so \
     vendor/motorola/msm8916-common/proprietary/vendor/lib/liblbs_core.so:system/vendor/lib/liblbs_core.so \
@@ -203,6 +209,7 @@ PRODUCT_PACKAGES += \
     ims \
     imssettings \
     imscmlibrary \
+    qti-vzw-ims-internal \
     qcnvitems \
     qcrilhook
 
